@@ -6,6 +6,7 @@ export function SearchUserPage(props){
 
   const handleSubmit = (formState) => {
        setUser(formState);
+       console.log(user);
        props.search(user);
   }
 

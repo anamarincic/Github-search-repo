@@ -12,6 +12,7 @@ export function SearchUser(props) {
        }else{
          setError(null);
          props.onSubmit(formState);
+         console.log(formState);
          setFormState({username: ""});
        }
   }
@@ -35,7 +36,7 @@ export function SearchUser(props) {
           <Button type="submit" text="GO!" />
         </div>
         <div className="sign-in-form__error">
-        {showErrorMessage && <div className="form-error">Failed to sign in!</div>}
+        {showErrorMessage && <div className="form-error">Erorr!</div>}
       </div>
       </form>
     )
