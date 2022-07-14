@@ -3,13 +3,25 @@ import {SearchUserPage} from "./Page/SearchUserPage";
 import {UserInfoPage} from "./Page/UserInfoPage";
 import {useState} from "react";
 
+
 function App() {
   const [user, setUser] = useState(null);
 
+  const storedSearch = (user) => {
+    setUser(user);
+  }
+
+  const clearSearch = () => {
+    setUser(null);
+  }
+  
+
+  const isSearch = user !== null;
+
   return (
     <div>
-      <UserInfoPage value={user}/>
-      <SearchUserPage />
+      {isSearch && <UserInfoPage reset={clearSearch} user={user}/>}
+      {!isSearch && <SearchUserPage search={storedSearch} />}
     </div>
   );
 }
