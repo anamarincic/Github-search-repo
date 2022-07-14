@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 
 export function UserInfoPage(props){
     const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
 
     var users= props.user.username;
 
