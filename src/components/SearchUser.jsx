@@ -7,17 +7,19 @@ export function SearchUser(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
        if(formState.username === ""){
          setError(true);
        }else{
          setError(null);
-         props.onSubmit(formState);
-         console.log(formState);
          setFormState({username: ""});
+         props.onSubmit(formState);
+         console.log(formState.username);
        }
   }
 
   const handleChange = (event) => {
+
     setFormState((state) => ({...state, [event.target.name] : event.target.value}));
 
   }
@@ -35,7 +37,7 @@ export function SearchUser(props) {
         <div className="search-form__field">
           <Button type="submit" text="GO!" />
         </div>
-        <div className="sign-in-form__error">
+        <div className="search-form__error">
         {showErrorMessage && <div className="form-error">Erorr!</div>}
       </div>
       </form>
